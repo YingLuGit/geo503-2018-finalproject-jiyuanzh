@@ -14,6 +14,7 @@ Air travel is increasingly popular in not only the United States but also other 
 # Materials and methods
 
 * Importing the data and data cleaning
+
 ```{r message = FALSE}
 library(tidyverse)
 library(ggmap)
@@ -49,21 +50,25 @@ p1
 ```
 
 * Visualization of US Airport with most weather related delays
+
 ```{r}
 p2 <- ggplot(US.sf) + geom_sf(aes(geometry = geom)) + geom_point(data = A_O.inner, aes(x = lon, y = lat, size = weather))
 p2
 ```
 
 * Scattered plot of Total Delay in Minutes vs Weather Delay
+
 ```{r}
 p3 <- ggplot(A_O.inner) + geom_point(aes(x = log(weather), y = log(total_delay))) + geom_smooth(method = loess, aes(x = log(weather), y = log(total_delay)))
 p3
 ```
 
 
+
 # Conclusions
 
 What have you learned?  Are there any broader implications?
+
 
 # References
 
